@@ -5,7 +5,7 @@
     ViewBag.Keywords = Model.MetaKeyWord;
 }
 
-<div>
+@*<div>
     <h2>
         @Model.Title
     </h2>
@@ -18,4 +18,21 @@
 </div>
 <div>
     @Html.Raw(Model.Text)
-</div>
+</div>*@
+
+<article>
+    <header>
+        <h2>
+            <a href="#">
+                @Model.Title
+            </a>
+        </h2>
+    </header>
+    <a href="#" class="image fit"><img src="~/images/@Model.TitleImagePath" alt="" /></a>
+    <div>
+        @*@Html.Raw(Model.Text)*@
+    </div>
+    <ul class="actions special">
+        <li><a href="#" class="button">Детальніше</a></li>
+    </ul>
+</article>

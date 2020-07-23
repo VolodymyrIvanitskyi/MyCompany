@@ -7,10 +7,10 @@ namespace MyCompany.Domain.Entities
         [Required]
         public string CodeWord { get; set; }
 
-        [Display(Name = "Название страницы (заголовок)")]
-        public override string Title { get; set; } = "Информационная страница";
+        [Display(Name = "Назва сторінки(заголовок)")]
+        public override string Title { get; set; } = "Інформаційна сторінка";
 
-        [Display(Name = "Cодержание страницы")]
-        public override string Text { get; set; } = "Содержание заполняется администратором";
+        [Display(Name = "Зміст сторінки")]
+        public override string Text { get; set; } = "Вміст заповнюється адмінітсратором";
     }
 }
