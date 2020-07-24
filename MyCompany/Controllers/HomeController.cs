@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyCompany.Domain;
+using System;
 
 namespace MyCompany.Controllers
 {
@@ -12,14 +13,25 @@ namespace MyCompany.Controllers
             this.dataManager = dataManager;
         }
 
-        public IActionResult Index()
+        /*public IActionResult Index()
         {
             return View(dataManager.TextFields.GetTextFieldByCodeWord("PageIndex"));
-        }
+        }*/
 
         public IActionResult Contacts()
         {
             return View(dataManager.TextFields.GetTextFieldByCodeWord("PageContacts"));
+        }
+
+        public IActionResult Index(Guid id)
+        {
+            if (id != default)
+            {
+                return View("Show", dataManager.ServiceItems.GetServiceItemById(id));
+            }
+
+            ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageServices");
+            return View(dataManager.ServiceItems.GetServiceItems());
         }
     }
 }

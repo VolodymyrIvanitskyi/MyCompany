@@ -1,92 +1,139 @@
-﻿<section class="posts">
-    <article>
-        <header>
-            <h2>
-                <a href="#">
-                    Практичний онлайн-<br />
-                    курс "IT-право"
+﻿@model IQueryable<ServiceItem>
+@{
+    TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeyWord;
+}
+    
+@if (Model.Any())
+{
+    <section class="posts">
+        @foreach (ServiceItem entity in Model)
+        {
+            <article>
+                <header>
+                    <h2>
+                        <a class="image fit" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                            @entity.Title
+                        </a>
+                        @*<p>@entity.Subtitle</p>*@
+                    </h2>
+                </header>
+
+                <a class="image fit" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                    <img src="~/images/@entity.TitleImagePath" alt="" />
                 </a>
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-        <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Детальніше</a></li>
-        </ul>
-    </article>
-    <article>
-        <header>
-            <h2>
-                <a href="#">
-                    Авторський курс від<br />
-                    Володимира Василенко
-                </a>
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-        <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Детальніше</a></li>
-        </ul>
-    </article>
-    <article>
-        <header>
-            <h2>
-                <a href="#">
-                    Курс "Юридичний<br />
-                    Маркетинг"
-                </a>
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-        <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Детальніше</a></li>
-        </ul>
-    </article>
-    <article>
-        <header>
-            <h2>
-                <a href="#">
-                    Курс "Кримінальне<br />
-                    судочинство"
-                </a>
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-        <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Детальніше</a></li>
-        </ul>
-    </article>
-    <article>
-        <header>
-            <h2>
-                <a href="#">
-                    Курс "Податкове<br />
-                    право"
-                </a>
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-        <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Детальніше</a></li>
-        </ul>
-    </article>
-    <article>
-        <header>
-            <h2>
-                <a href="#">
-                    Курс "Практичне<br />
-                    право"
-                </a>
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-        <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
-        <ul class="actions special">
-            <li><a href="#" class="button">Детальніше</a></li>
-        </ul>
-    </article>
-</section>
+                <div>
+                    @entity.Subtitle
+
+                </div>
+                <ul class="actions special">
+                    @*<li><a href="#" class="button">Детальніше</a></li>*@
+                    <li>
+                        <a class="button" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                            Детальніше
+                        </a>
+                    </li>
+                </ul>
+
+            </article>
+        }
+    </section>
+}
+
+@*
+    <section class="posts">
+        <article>
+            <header>
+                <h2>
+                    <a href="#">
+                        Практичний онлайн-<br />
+                        курс "IT-право"
+                    </a>
+                </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+            <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
+            <ul class="actions special">
+                <li><a href="#" class="button">Детальніше</a></li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h2>
+                    <a href="#">
+                        Авторський курс від<br />
+                        Володимира Василенко
+                    </a>
+                </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+            <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
+            <ul class="actions special">
+                <li><a href="#" class="button">Детальніше</a></li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h2>
+                    <a href="#">
+                        Курс "Юридичний<br />
+                        Маркетинг"
+                    </a>
+                </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+            <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
+            <ul class="actions special">
+                <li><a href="#" class="button">Детальніше</a></li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h2>
+                    <a href="#">
+                        Курс "Кримінальне<br />
+                        судочинство"
+                    </a>
+                </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+            <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
+            <ul class="actions special">
+                <li><a href="#" class="button">Детальніше</a></li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h2>
+                    <a href="#">
+                        Курс "Податкове<br />
+                        право"
+                    </a>
+                </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+            <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
+            <ul class="actions special">
+                <li><a href="#" class="button">Детальніше</a></li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h2>
+                    <a href="#">
+                        Курс "Практичне<br />
+                        право"
+                    </a>
+                </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+            <p>Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис Опис </p>
+            <ul class="actions special">
+                <li><a href="#" class="button">Детальніше</a></li>
+            </ul>
+        </article>
+    </section>
+*@

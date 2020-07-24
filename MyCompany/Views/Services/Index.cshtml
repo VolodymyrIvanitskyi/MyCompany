@@ -6,39 +6,43 @@
     ViewBag.Description = textField.MetaDescription;
     ViewBag.Keywords = textField.MetaKeyWord;
 }
+<div id="main">
+    @* Щоб відобразити курси у стопвпець потрібно забрати id="main"*@
+    @if (Model.Any())
+    {
+        <section class="posts">
+            @foreach (ServiceItem entity in Model)
+            {
+                <article>
+                    <header>
+                        <h2>
+                            <a class="image fit" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                                @entity.Title
+                            </a>
+                            @*<p>@entity.Subtitle</p>*@
+                        </h2>
+                    </header>
 
-    <div id="main">
-        @* Щоб відобразити курси у стопвпець потрібно забрати id="main"*@
-        @if (Model.Any())
-        {
-            <section class="posts">
-                @foreach (ServiceItem entity in Model)
-                {
-                    <article>
-                        <header>
-                            <h2>
-                                <a href="#">
-                                    @entity.Title
-                                </a>
-                                @*<p>@entity.Subtitle</p>*@
-                            </h2>
-                        </header>
+                    <a class="image fit" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                        <img src="~/images/@entity.TitleImagePath" alt="" />
+                    </a>
+                    <div>
+                        @entity.Subtitle
 
-                        <a class="image fit" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
-                            <img src="~/images/@entity.TitleImagePath" alt="" />
-                        </a>
-                        <div>
-                            @entity.Text
+                    </div>
+                    <ul class="actions special">
+                        @*<li><a href="#" class="button">Детальніше</a></li>*@
+                        <li>
+                            <a class="button" asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                                Детальніше
+                            </a>
+                        </li>
+                    </ul>
 
-                        </div>
-                        <ul class="actions special">
-                            <li><a href="#" class="button">Детальніше</a></li>
-                        </ul>
-
-                    </article>
-                }
-            </section>
-        }
-    </div>
+                </article>
+            }
+        </section>
+    }
+</div>
 
 

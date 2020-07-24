@@ -1,9 +1,18 @@
-﻿@model TextField
+﻿@*@model TextField
+    @{
+        ViewBag.Title = Model.MetaTitle;
+        ViewBag.Description = Model.MetaDescription;
+        ViewBag.Keywords = Model.MetaKeyWord;
+    }*@
+@model IQueryable<ServiceItem>
 @{
-    ViewBag.Title = Model.MetaTitle;
-    ViewBag.Description = Model.MetaDescription;
-    ViewBag.Keywords = Model.MetaKeyWord; @*KeyWord or Keywords*@
+    TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeyWord;
 }
+
 <article class="post featured">
     <header class="major">
         <h2>
