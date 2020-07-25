@@ -1,4 +1,4 @@
-﻿!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 
 <html>
 <head>
@@ -13,26 +13,8 @@
         <!-- Intro -->
         @await Html.PartialAsync("IntroPartial")
 
-        <!-- Header -->
-        <header id="header">
-            @*<a href="" class="logo">Обрати курс</a>*@
-            <a class="logo" asp-area="" asp-controller="Services" asp-action="Index">Обрати курс</a>
-        </header>
 
-        <!-- Navigation -->
-        @await Html.PartialAsync("NavigationPartial")
-
-
-        <!-- Main -->
-        <div id="main">
-
-            @RenderBody();
-
-        </div>
-
-        <!-- Footer -->
-        @*await Html.PartialAsync("FooterPartial")*@
-
+        @RenderBody();
 
         <!-- Copyright -->
         <div id="copyright">
@@ -42,6 +24,7 @@
     </div>
 
     @await Html.PartialAsync("ScriptsPartial")
+    
 
 </body>
 </html>

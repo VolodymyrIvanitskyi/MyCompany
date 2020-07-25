@@ -30,7 +30,7 @@ namespace MyCompany.Controllers
                 return View("Show", dataManager.ServiceItems.GetServiceItemById(id));
             }
 
-            ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageServices");
+            ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageIndex");
             return View(dataManager.ServiceItems.GetServiceItems());
         }
     }
