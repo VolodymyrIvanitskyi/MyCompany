@@ -5,7 +5,7 @@ namespace MyCompany.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Логин")]
+        [Display(Name = "Логін")]
         public string UserName { get; set; }
 
         [Required]
@@ -13,7 +13,7 @@ namespace MyCompany.Models
         [Display(Name = "Пароль")]
         public string Password { get; set; }
 
-        [Display(Name = "Запомнить меня?")]
+        [Display(Name = "Запам'ятати мене")]
         public bool RememberMe { get; set; }
     }
 }

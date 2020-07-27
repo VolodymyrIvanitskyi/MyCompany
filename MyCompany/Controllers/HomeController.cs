@@ -33,5 +33,8 @@ namespace MyCompany.Controllers
             ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageIndex");
             return View(dataManager.ServiceItems.GetServiceItems());
         }
+     
+
+
     }
 }

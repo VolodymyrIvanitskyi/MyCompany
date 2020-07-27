@@ -1,6 +1,6 @@
-﻿@model ServiceItem
+﻿@model MainServiceItem
 @{
-    string strTitle = "Редагувати запис";
+    string strTitle = "Головна сторінка пости";
     ViewBag.Title = strTitle;
 }
 
@@ -9,7 +9,7 @@
 <div id="main">
     <h2>@strTitle</h2>
     <div>
-        <form asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <form asp-area="Admin" asp-controller="MainServiceItems" asp-action="Edit" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="DateAdded" />
             <input type="hidden" asp-for="TitleImagePath" />

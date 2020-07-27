@@ -1,0 +1,33 @@
+﻿@using MyCompany.Service;
+@model IQueryable<MainServiceItem>
+@{
+    string strTitle = "Панель адміністратора";
+    ViewBag.Title = strTitle;
+}
+<h2>@strTitle</h2>
+<div>
+    <h3>Пости</h3>
+    <div class="div-box">
+        <a asp-area="Admin" asp-controller="MainServiceItems" asp-action="Edit" asp-route-id="">Добавити пост</a>
+    </div>
+    @if (Model.Any())
+    {
+        <div>
+            @foreach (MainServiceItem entity in Model)
+            {
+                <div>
+                    <a asp-area="Admin" asp-controller="MainServiceItems" asp-action="Edit" asp-route-id="@entity.Id">редагувати</a>
+                    |
+                    <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="MainServiceItems" asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@entity.Id">
+                        <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Видалити</a>
+                    </form>
+                    |
+                    <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
+                        @($"{entity.Title}")
+                    </a>
+                </div>
+            }
+        </div>
+    }
+</div>

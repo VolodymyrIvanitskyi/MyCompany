@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using MyCompany.Domain;
 using MyCompany.Domain.Entities;
 using MyCompany.Service;
+using System.IO;
 
 namespace MyCompany.Areas.Admin.Controllers
 {
@@ -30,5 +32,15 @@ namespace MyCompany.Areas.Admin.Controllers
             }
             return View(model);
         }
+        /*
+        [HttpPost]
+        public IActionResult Edit(MainServiceItem mainServiceItem)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+            }
+            return View(mainServiceItem);
+        }*/
     }
 }

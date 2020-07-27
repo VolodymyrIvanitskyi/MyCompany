@@ -39,7 +39,7 @@ namespace MyCompany.Controllers
                         return Redirect(returnUrl ?? "/");
                     }
                 }
-                ModelState.AddModelError(nameof(LoginViewModel.UserName), "Неверный логин или пароль");
+                ModelState.AddModelError(nameof(LoginViewModel.UserName), "Неправильний логін або пароль");
             }
             return View(model);
         }

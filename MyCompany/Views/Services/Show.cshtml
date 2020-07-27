@@ -4,6 +4,10 @@
     ViewBag.Description = Model.MetaDescription;
     ViewBag.Keywords = Model.MetaKeyWord;
 }
+    <header id="header">
+        <a href="/Home/Index" class="logo">@Config.CompanyName</a>
+    </header>
+
     <nav id="nav">
         <ul class="links">
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a></li>

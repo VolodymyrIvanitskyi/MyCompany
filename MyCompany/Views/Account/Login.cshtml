@@ -1,20 +1,9 @@
 ﻿@model LoginViewModel
-    <nav id="nav">
-        <ul class="links">
-            <li><a asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a></li>
-            <li><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="">Курси</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
-        </ul>
-        <ul class="icons">
-            <li><a href="#" class="icon brands fa-telegram"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            @*<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>*@
-        </ul>
-    </nav>
-<div>
-    <h1>Вхід в особистий кабінет</h1>
-    <div class="div-box">
+
+<div id="main">
+
+    <h3>Вхід в особистий кабінет</h3>
+    @*<div class="div-box">*@
         <form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
             <div asp-validation-summary="All"></div>
             <div>
@@ -36,5 +25,5 @@
                 <input type="submit" value="Ввійти" />
             </div>
         </form>
-    </div>
+    @*</div>*@
 </div>
