@@ -16,9 +16,10 @@ namespace MyCompany.Areas.Admin.Controllers
         {
             this.dataManager = dataManager;
         }
+        
         public IActionResult Redirect()
         {
-            return View("MainPagePostsView");
+            return View("MainPagePostsView", dataManager.MainServiceItems.GetServiceItems());
         }
 
         public IActionResult Edit(Guid id)

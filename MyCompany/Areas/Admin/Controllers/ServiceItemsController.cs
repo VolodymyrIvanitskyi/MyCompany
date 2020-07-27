@@ -20,6 +20,10 @@ namespace MyCompany.Areas.Admin.Controllers
             this.hostingEnvironment = hostingEnvironment;
         }
 
+        public IActionResult Redirect()
+        {
+            return View("PagePostsView", dataManager.ServiceItems.GetServiceItems());
+        }
         public IActionResult Edit(Guid id)
         {
             var entity = id == default ? new ServiceItem() : dataManager.ServiceItems.GetServiceItemById(id);

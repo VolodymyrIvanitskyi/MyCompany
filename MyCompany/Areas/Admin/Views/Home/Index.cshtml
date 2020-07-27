@@ -10,7 +10,7 @@
         <a href="/Home/Index" class="logo">@Config.CompanyName</a>
     </header>
     <div id="main">
-        <div>
+        <div>@*
             <h2>@strTitle</h2>
             <div>
                 <h3>Наші курси</h3>
@@ -37,10 +37,10 @@
                         }
                     </div>
                 }
-            </div>
+            </div>*@
             @*----------------------------------------------------------------------------------------*@
-            
-            <a asp-area="Admin" asp-controller="MainServiceItems" asp-action="Redirect"><h3>Редагувати пости головної сторінки</h3></a>
+            <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Redirect">Редагувати Курси</a><br />
+            <a asp-area="Admin" asp-controller="MainServiceItems" asp-action="Redirect">Редагувати пости новин</a>
             @*Тут можна створити ще один контроллер і через нього добавити пункт щоб редагувати на головній сторінці ОПИС ПРО ШКОЛУ*@
             <div class="div-box">
                 <h3>Редагувати сторінки сайту</h3>
