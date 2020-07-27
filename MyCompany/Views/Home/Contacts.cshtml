@@ -10,6 +10,7 @@
     <ul class="links">
         <li><a asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a></li>
         <li><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="">Курси</a></li>
+        <li><a asp-area="" asp-controller="MainServices" asp-action="Index">Новини</a></li>
         <li class="active"><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
     </ul>
     <ul class="icons">
@@ -19,5 +20,7 @@
 </nav>
 
 <div id="main">
-    @Html.Raw(Model.Text)
+    <div class="align-center">
+        @Html.Raw(Model.Text)
+    </div>
 </div>

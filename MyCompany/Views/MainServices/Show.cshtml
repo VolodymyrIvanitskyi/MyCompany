@@ -12,14 +12,10 @@
     <ul class="links">
         <li><a asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a></li>
         <li><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="">Курси</a></li>
+        <li><a asp-area="" asp-controller="MainServices" asp-action="Index">Новини</a></li>
         <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
     </ul>
-    <ul class="icons">
-        <li><a href="#" class="icon brands fa-telegram"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        @*<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>*@
-    </ul>
+    @await Html.PartialAsync("SocialButtons")
 </nav>
 <div id="main">
     <article>
@@ -38,8 +34,6 @@
             @Html.Raw(Model.Text)
 
         </div>
-        <ul class="actions special">
-            <li><a href="" class="button">Записатися</a></li>
-        </ul>
+        
     </article>
 </div>

@@ -20,7 +20,7 @@ namespace MyCompany.Controllers
                 return View("Show", dataManager.MainServiceItems.GetServiceItemById(id));
             }
 
-            ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageServices"); // або MainPAge замість PageServices
+            ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageNews"); // або MainPAge замість PageServices
             return View(dataManager.MainServiceItems.GetServiceItems());
         }
     }

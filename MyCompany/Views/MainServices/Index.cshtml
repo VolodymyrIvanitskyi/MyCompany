@@ -1,5 +1,5 @@
-﻿@*------------------------------------------------------ ВКЛАДКА КУРСИИ*@
-@model IQueryable<ServiceItem>
+﻿@*------------------------------------------------------ ВКЛАДКА Новини*@
+@model IQueryable<MainServiceItem>
 @{
     TextField textField = ViewBag.TextField;
 
@@ -11,18 +11,14 @@
 <nav id="nav">
     <ul class="links">
         <li><a asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a></li>
-        <li class="active"><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="">Курси</a></li>
-        <li><a asp-area="" asp-controller="MainServices" asp-action="Index">Новини</a></li>
+        <li><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="">Курси</a></li>
+        <li class="active"><a asp-area="" asp-controller="MainServices" asp-action="Index">Новини</a></li>
         <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
     </ul>
     <ul class="icons">
         @await Html.PartialAsync("SocialButtons")
     </ul>
 </nav>
-<div id="main">
-    @* Щоб відобразити курси у стопвпець потрібно забрати id="main"*@
-
-    @await Html.PartialAsync("PostsPartial")
-</div>
-
+@await Html.PartialAsync("MainPostsPartial")
+    
 

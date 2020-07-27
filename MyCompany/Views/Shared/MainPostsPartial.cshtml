@@ -7,38 +7,43 @@
     ViewBag.Keywords = textField.MetaKeyWord;
 }
 
+<div id="main">
 @if (Model.Any())
 {
 
-    <section class="posts featured">
+    <article class="post featured">
         @foreach (MainServiceItem entity in Model)
         {
-            <article>
-                <header>
+        <article>
+            <header>
                     <h2>
                         <a class="image fit" asp-area="" asp-controller="MainServices" asp-action="Index" asp-route-id="@entity.Id">
                             @entity.Title
                         </a>
                     </h2>
-                </header>
+                    <p class="align-center">
+                        @entity.Subtitle
+                    </p>  
+            </header>
 
-                <a class="image fit" asp-area="" asp-controller="MainServices" asp-action="Index" asp-route-id="@entity.Id">
-                    <img src="~/images/@entity.TitleImagePath" alt="" />
-                </a>
-                <div>
-                    @entity.Subtitle
+            <a class="image fit" asp-area="" asp-controller="MainServices" asp-action="Index" asp-route-id="@entity.Id">
+                <img src="~/images/@entity.TitleImagePath" alt="" />
+            </a>
+            @*<div>
+            @entity.Subtitle
 
-                </div>
-                <ul class="actions special">
-                    <li>
-                        <a class="button" asp-area="" asp-controller="MainServices" asp-action="Index" asp-route-id="@entity.Id">
-                            Детальніше
-                        </a>
-                    </li>
-                </ul>
+        </div>*@
+            <ul class="actions special">
+                <li>
+                    <a class="button" asp-area="" asp-controller="MainServices" asp-action="Index" asp-route-id="@entity.Id">
+                        Детальніше
+                    </a>
+                </li>
+            </ul>
 
-            </article>
+        </article>
         }
-    </section>
+    </article>
 
 }
+</div>
