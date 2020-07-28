@@ -83,26 +83,27 @@
 		}
 	}
 
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select,
-	textarea {
-		@include vendor('appearance', 'none');
-		background: transparent;
-		border-radius: 0;
-		border: solid 2px;
-		color: inherit;
-		display: block;
-		outline: 0;
-		padding: 0 1rem;
-		text-decoration: none;
-		width: 100%;
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+	@include vendor('appearance', 'none');
+	background: transparent;
+	border-radius: 0;
+	border: solid 2px;
+	color: inherit;
+	display: block;
+	outline: 0;
+	padding: 0 1rem;
+	text-decoration: none;
+	width: 100%;
+	resize: none;
 
-		&:invalid {
-			box-shadow: none;
-		}
+	&:invalid {
+		box-shadow: none;
 	}
+}
 
 	select {
 		background-size: 1.25rem;

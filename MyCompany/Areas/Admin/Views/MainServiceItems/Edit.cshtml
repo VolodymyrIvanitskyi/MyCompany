@@ -1,14 +1,18 @@
 ﻿@model MainServiceItem
 @{
-    string strTitle = "Головна сторінка пости";
+    string strTitle = "Вкладка новини";
     ViewBag.Title = strTitle;
 }
 
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
 <div id="main">
-    <h2>@strTitle</h2>
+    <div class="align-center">
+        <h3><a href="/admin">Панель адміністратора</a></h3>
+    </div>
+
     <div>
+        <h2>@strTitle</h2>
         <form asp-area="Admin" asp-controller="MainServiceItems" asp-action="Edit" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="DateAdded" />

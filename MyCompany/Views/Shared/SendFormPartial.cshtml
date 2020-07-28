@@ -1,6 +1,13 @@
-﻿<footer id="footer">
+﻿<div id="main">
+    <div class="align-center">
+        <h2>Не знаєте, який курс обрати?</h2>
+        <p class="align-center">Залиште свої дані і ми допоможемо обрати курс</p>
+    </div>
+    
+</div>
+<footer id="footer">
     <section>
-        <form method="post" action="#">
+        <form asp-controller="Home" asp-action="SendForm" method="post" enctype="multipart/form-data">
             <div class="fields">
                 <div class="field">
                     <label for="name">Ім'я</label>
@@ -11,12 +18,18 @@
                     <input type="text" name="email" id="email" />
                 </div>
                 <div class="field">
-                    <label for="message">Повідомлення</label>
-                    <textarea name="message" id="message" rows="3"></textarea>
+                    <label for="phoneNumber">Номер телефону</label>
+                    <input type="text" name="phoneNumber" id="phoneNumber" />
+                </div>
+                <div class="field">
+                    <label for="message">Повідомлення(За бажанням)</label>
+                    <textarea name="message" rows="2"></textarea>
                 </div>
             </div>
             <ul class="actions">
-                <li><input type="submit" value="Надіслати" /></li>
+                <li>
+                    <input type="submit" value="Отримати консультацію" />
+                </li>
             </ul>
         </form>
     </section>

@@ -31,17 +31,6 @@ namespace MyCompany.Areas.Admin.Controllers
             return View(entity);
         }
 
-        /*
-        [HttpPost]
-        public IActionResult Edit(MainServiceItem mainServiceItem)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
-            }
-            return View(mainServiceItem);
-        }*/
-
         [HttpPost]
         public IActionResult Edit(MainServiceItem model, IFormFile titleImageFile)
         {

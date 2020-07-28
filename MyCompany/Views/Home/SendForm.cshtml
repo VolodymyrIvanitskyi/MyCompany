@@ -1,8 +1,6 @@
-﻿@model MainServiceItem
+﻿@model DataContact
 @{
-    ViewBag.Title = Model.MetaTitle;
-    ViewBag.Description = Model.MetaDescription;
-    ViewBag.Keywords = Model.MetaKeyWord;
+    
 }
 <header id="header">
     <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">@Config.CompanyName</a>
@@ -18,23 +16,9 @@
         @await Html.PartialAsync("SocialButtons")
     </ul>
 </nav>
+
 <div id="main">
-    <article>
-        <header>
-            <h2>
-                <div class="align-center">
-                    <a href="#">
-                        @Model.Title
-                    </a>
-                </div>
-
-            </h2>
-        </header>
-        <a href="#" class="image fit"><img src="~/images/@Model.TitleImagePath" alt="" /></a>
-        <div>
-            @Html.Raw(Model.Text)
-
-        </div>
-        
-    </article>
+    <div class="align-center">
+        Консультант зв'яжеться з вами в найближчий час.
+    </div>
 </div>

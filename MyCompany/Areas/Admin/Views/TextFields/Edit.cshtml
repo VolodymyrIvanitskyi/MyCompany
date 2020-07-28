@@ -1,15 +1,19 @@
 ﻿@*Text Field*@
 @model TextField
     @{
-        string strTitle = "Редагувати запис";
+        string strTitle = "Сторінки сайту";
         ViewBag.Title = strTitle;
     }
 
     <script src="~/js/ckeditor/ckeditor.js"></script>
-
+    
     <div id="main">
-        <h2>@strTitle</h2>
+        <div class="align-center">
+            <h3><a href="/admin">Панель адміністратора</a></h3>
+        </div>
+
         <div>
+            <h3>@strTitle</h3>
             <form asp-area="Admin" asp-controller="TextFields" asp-action="Edit" method="post" enctype="multipart/form-data">
                 <input type="hidden" asp-for="Id" />
                 <input type="hidden" asp-for="DateAdded" />
@@ -26,7 +30,7 @@
                     <textarea asp-for="Text"></textarea>
                     <span asp-validation-for="Text"></span>
                 </div>
-               
+
                 <div class="div-box">
                     <label asp-for="MetaTitle"></label>
                     <input asp-for="MetaTitle" />

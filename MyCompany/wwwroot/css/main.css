@@ -55,10 +55,12 @@ input::-moz-focus-inner {
   padding: 0; }
 
 input, select, textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none; }
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    resize: none;
+}
 
 /* Basic */
 @-ms-viewport {
@@ -1367,7 +1369,8 @@ textarea {
   outline: 0;
   padding: 0 1rem;
   text-decoration: none;
-  width: 100%; }
+  width: 100%;
+  resize: none; }
   input[type="text"]:invalid,
   input[type="password"]:invalid,
   input[type="email"]:invalid,

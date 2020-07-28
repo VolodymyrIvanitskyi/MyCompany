@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyCompany.Domain;
+using MyCompany.Domain.Entities;
 using System;
+using MyCompany.Service;
 
 namespace MyCompany.Controllers
 {
@@ -32,6 +34,18 @@ namespace MyCompany.Controllers
 
             ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageIndex");
             return View(dataManager.ServiceItems.GetServiceItems());
+        }
+        
+        [HttpPost]
+        public IActionResult SendForm(DataContact model)
+        {
+            if (ModelState.IsValid)
+            {
+                dataManager.DataContacts.SaveDataContacts(model);
+                return View(model);
+            }
+            
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
         }
      
 

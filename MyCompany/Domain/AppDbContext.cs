@@ -14,6 +14,7 @@ namespace MyCompany.Domain
         public DbSet<ServiceItem> ServiceItems { get; set; }
         //----------------------------------------------------------
         public DbSet<MainServiceItem> MainServiceItems { get; set; }
+        public DbSet<DataContact> DataContacts { get; set; }
         //----------------------------------------------------------
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -5,7 +5,7 @@
     ViewBag.Keywords = Model.MetaKeyWord;
 }
     <header id="header">
-        <a href="/Home/Index" class="logo">@Config.CompanyName</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">@Config.CompanyName</a>
     </header>
 
     <nav id="nav">
@@ -15,7 +15,9 @@
             <li><a asp-area="" asp-controller="MainServices" asp-action="Index">Новини</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
         </ul>
-        @await Html.PartialAsync("SocialButtons")
+        <ul class="icons">
+            @await Html.PartialAsync("SocialButtons")
+        </ul>
     </nav>
     <div id="main">
         <article>

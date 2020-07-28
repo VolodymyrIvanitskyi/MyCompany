@@ -7,37 +7,10 @@
 }
 
     <header id="header">
-        <a href="/Home/Index" class="logo">@Config.CompanyName</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">@Config.CompanyName</a>
     </header>
     <div id="main">
-        <div>@*
-            <h2>@strTitle</h2>
-            <div>
-                <h3>Наші курси</h3>
-                <div class="div-box">
-                    <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="">Добавити курс</a>
-                </div>
-                @if (Model.Any())
-                {
-                    <div>
-                        @foreach (ServiceItem entity in Model)
-                        {
-                            <div>
-                                <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="@entity.Id">редагувати</a>
-                                |
-                                <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="ServiceItems" asp-action="Delete" method="post">
-                                    <input type="hidden" name="id" value="@entity.Id">
-                                    <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Видалити</a>
-                                </form>
-                                |
-                                <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id">
-                                    @($"{entity.Title}")
-                                </a>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>*@
+        <div>
             @*----------------------------------------------------------------------------------------*@
             <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Redirect">Редагувати Курси</a><br />
             <a asp-area="Admin" asp-controller="MainServiceItems" asp-action="Redirect">Редагувати пости новин</a>

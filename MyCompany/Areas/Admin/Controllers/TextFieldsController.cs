@@ -32,15 +32,6 @@ namespace MyCompany.Areas.Admin.Controllers
             }
             return View(model);
         }
-        /*
-        [HttpPost]
-        public IActionResult Edit(MainServiceItem mainServiceItem)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
-            }
-            return View(mainServiceItem);
-        }*/
+     
     }
 }

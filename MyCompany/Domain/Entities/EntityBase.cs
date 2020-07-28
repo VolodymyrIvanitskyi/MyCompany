@@ -8,7 +8,7 @@ namespace MyCompany.Domain.Entities
         protected EntityBase() => DateAdded = DateTime.UtcNow;
 
         [Required]
-        public Guid Id { get;set; }
+        public Guid Id { get; set; }
 
         [Display(Name = "Назва(Заголовок)")]
         public virtual string Title { get; set; }
@@ -33,5 +33,7 @@ namespace MyCompany.Domain.Entities
 
         [DataType(DataType.Time)]
         public DateTime DateAdded { get; set; }
+
+        
     }
 }

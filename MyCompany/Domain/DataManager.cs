@@ -8,11 +8,17 @@ namespace MyCompany.Domain
         public IServiceItemsRepository ServiceItems { get; set; }
         public IMainServiceItemsRepository MainServiceItems { get; set; }
 
-        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository serviceItemsRepository, IMainServiceItemsRepository mainServiceItemsRepository)
+        public IDataContactsRepository DataContacts {get;set;} 
+
+        public DataManager(ITextFieldsRepository textFieldsRepository, 
+            IServiceItemsRepository serviceItemsRepository, 
+            IMainServiceItemsRepository mainServiceItemsRepository,
+            IDataContactsRepository dataContacts)
         {
             TextFields = textFieldsRepository;
             ServiceItems = serviceItemsRepository;
             MainServiceItems = mainServiceItemsRepository;
+            DataContacts = dataContacts;
         }
     }
 }
